@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Student Link Manager (Static Frontend)</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main>
+    <h1>📚 Student Link Manager (Frontend)</h1>
+
+    <section id="add">
+      <h2>Add / Shorten a Link</h2>
+      <form id="addForm">
+        <input name="long_url" placeholder="Full URL (include http:// or https://)" required>
+        <input name="title" placeholder="Title">
+        <textarea name="description" placeholder="Short description" rows="2"></textarea>
+        <input name="tags" placeholder="Tags (comma-separated)">
+        <input name="custom_code" placeholder="Custom short code (optional)">
+        <button type="submit">Save & Shorten</button>
+      </form>
+      <div id="shortResult" class="hidden"></div>
+    </section>
+
+    <section id="search">
+      <h2>Search / Filter</h2>
+      <form id="searchForm">
+        <input name="q" placeholder="Search by title, description, tags or URL">
+        <button type="submit">Search</button>
+        <button id="clearBtn" type="button">Clear</button>
+        <a id="exportLink" href="#">Export CSV</a>
+      </form>
+    </section>
+
+    <section id="list">
+      <h2>Recent Links</h2>
+      <table id="urlsTable">
+        <thead><tr><th>Title</th><th>Short</th><th>Clicks</th><th>Tags</th><th>Notes</th><th>Created</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </section>
+  </main>
+
+  <script>
+    // Configure this to the deployed backend API base URL, e.g. https://my-backend.example.com
+    const API_BASE = '';
+  </script>
+  <script src="app.js"></script>
+</body>
+</html>
