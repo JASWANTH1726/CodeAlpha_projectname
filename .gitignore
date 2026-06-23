@@ -1,0 +1,4 @@
+# Ignore local backend instance data and Python artifacts
+backend/instance/
+__pycache__/
+*.pyc
